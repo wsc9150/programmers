@@ -1,0 +1,25 @@
+# 더 맵게
+
+import heapq
+
+def solution(scoville, K):
+    answer = 0
+    heapq.heapify(scoville)
+    
+    while scoville[0] < K:
+        if len(scoville) < 2:
+            break
+        
+        a = heapq.heappop(scoville)
+        b = heapq.heappop(scoville)
+        
+        new_scoville = a + (b * 2)
+        heapq.heappush(scoville, new_scoville)
+        answer += 1
+    
+    if scoville[0] < K:
+        answer = -1
+    
+    return answer
+
+print(solution([1, 2, 3, 9, 10, 12], 7))
