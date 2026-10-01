@@ -1,3 +1,5 @@
+# [PCCP 기출문제] 1번 / 붕대 감기
+
 def solution(bandage, health, attacks):
     answer = 0
     time = 0
